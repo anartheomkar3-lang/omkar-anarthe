@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bike Rental Service</title>
+  <style>
+    :root{--accent:#1f7a4c;--muted:#6b7280;--bg:#f8fafb;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+    .container{max-width:1000px;margin:32px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#48bb78);display:grid;place-items:center;color:#fff;font-weight:700}
+    nav a{margin-left:16px;color:var(--muted);text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:18px}
+    .card{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:8px}
+    .cta{display:inline-block;margin-top:16px;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .feature{padding:14px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef2f6}
+    .side-book{padding:16px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3}
+    .price{font-size:20px;font-weight:800;color:var(--accent);margin-top:10px}
+    section{margin-top:28px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    footer{margin-top:32px;padding:18px 0;color:var(--muted);text-align:center}
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.features{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">BR</div>
+        <div>
+          <div style="font-weight:700">Bike Rental Service</div>
+          <div style="font-size:12px;color:var(--muted)">Affordable • Eco-friendly • On-demand</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <div class="card">
+          <h1>Electric & Standard Bike Rentals for Short Trips</h1>
+          <p class="lead">Rent bikes by the hour or subscribe monthly. Ideal for students, commuters, and tourists — cut commute cost and carbon footprint.</p>
+
+          <div class="features">
+            <div class="feature">
+              <strong>On-demand</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Unlock with app, ride, and drop at any station.</div>
+            </div>
+            <div class="feature">
+              <strong>Affordable</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Pay-per-ride and cheap memberships.</div>
+            </div>
+            <div class="feature">
+              <strong>Safe & Maintained</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Regular checks and battery monitoring.</div>
+            </div>
+          </div>
+
+          <a class="cta" href="#booking">Book a Bike</a>
+        </div>
+
+        <section id="how">
+          <h3>How it works</h3>
+          <div class="grid-2">
+            <div class="card">
+              <strong>1. Locate</strong>
+              <p class="lead" style="margin:8px 0">Find nearest bike on the app with live availability and battery status.</p>
+            </div>
+            <div class="card">
+              <strong>2. Ride</strong>
+              <p class="lead" style="margin:8px 0">Unlock the bike, ride to your destination, and park at any docking station.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing">
+          <h3>Pricing</h3>
+          <div class="grid-2">
+            <div class="card">
+              <strong>Pay-per-ride</strong>
+              <p class="lead" style="margin:8px 0">₹ 15 / 15 minutes (standard bike)<br>₹ 30 / 15 minutes (electric bike)</p>
+            </div>
+            <div class="card">
+              <strong>Membership</strong>
+              <p class="lead" style="margin:8px 0">Monthly ₹ 899 — unlimited 30-minute rides, discounted extra time.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="card side-book" id="booking">
+        <h3 style="margin-top:0">Quick Booking</h3>
+        <form onsubmit="event.preventDefault();alert('Booking received — this is a static demo.');">
+          <label for="type">Bike Type</label>
+          <select id="type">
+            <option>Standard Bike</option>
+            <option>Electric Bike</option>
+          </select>
+
+          <label for="hours" style="margin-top:12px">Duration (hours)</label>
+          <input id="hours" type="number" min="1" value="1" />
+
+          <label for="location" style="margin-top:12px">Pickup Station</label>
+          <input id="location" type="text" placeholder="e.g., College Gate" />
+
+          <div class="price">Estimated: ₹ 30</div>
+          <button class="cta" style="width:100%;margin-top:12px">Confirm Booking</button>
+        </form>
+
+        <div style="font-size:13px;color:var(--muted);margin-top:12px">Need help? Call: +91 90000 00000</div>
+      </aside>
+    </div>
+
+    <section id="contact">
+      <div class="card">
+        <h3>Contact & Partnerships</h3>
+        <p class="lead">Partner with us: bike suppliers, campus offices, and local authorities. Email: info@bikerental.example</p>
+      </div>
+    </section>
+
+    <footer>
+      © Bike Rental Service — Designed for academic project
+    </footer>
+  </div>
+</body>
+</html>
